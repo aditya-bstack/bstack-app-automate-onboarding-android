@@ -12,6 +12,9 @@ import org.testng.annotations.Test;
 import io.appium.java_client.AppiumBy;
 
 public class FirstTest extends AppiumTest {
+	
+	String username = System.getenv("WIKI_USERNAME");
+	String password = System.getenv("WIKI_PASSWORD");
 
     @Test
     public void test1() throws Exception {
@@ -26,11 +29,11 @@ public class FirstTest extends AppiumTest {
 	
 	WebElement usernameElement = (WebElement) new WebDriverWait(driver, Duration.ofSeconds(30)).until(
 	          ExpectedConditions.elementToBeClickable(AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[1]/android.widget.FrameLayout/android.widget.EditText")));
-    usernameElement.sendKeys("SilverScar25");
+    usernameElement.sendKeys(username);
     
     WebElement passwordElement = (WebElement) new WebDriverWait(driver, Duration.ofSeconds(30)).until(
 	          ExpectedConditions.elementToBeClickable(AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[2]/android.widget.FrameLayout/android.widget.EditText")));
-    passwordElement.sendKeys("Aditya@098");
+    passwordElement.sendKeys(password);
     
     WebElement loginButtonElement = (WebElement) new WebDriverWait(driver, Duration.ofSeconds(30)).until(
 	          ExpectedConditions.elementToBeClickable(AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.TextView[1]")));
@@ -78,11 +81,11 @@ public class FirstTest extends AppiumTest {
 		
 		WebElement usernameElement = (WebElement) new WebDriverWait(driver, Duration.ofSeconds(30)).until(
 		          ExpectedConditions.elementToBeClickable(AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[1]/android.widget.FrameLayout/android.widget.EditText")));
-		usernameElement.sendKeys("SilverScar25");
+		usernameElement.sendKeys(username);
 		
 		WebElement passwordElement = (WebElement) new WebDriverWait(driver, Duration.ofSeconds(30)).until(
 		          ExpectedConditions.elementToBeClickable(AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/TextInputLayout[2]/android.widget.FrameLayout/android.widget.EditText")));
-		passwordElement.sendKeys("Aditya@099");
+		passwordElement.sendKeys(password+"0");
 		
 		WebElement loginButtonElement = (WebElement) new WebDriverWait(driver, Duration.ofSeconds(30)).until(
 		          ExpectedConditions.elementToBeClickable(AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.TextView[1]")));
